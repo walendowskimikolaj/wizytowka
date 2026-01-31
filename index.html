@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikołaj Walendowski | Portfolio Marketingowe</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text: #334155;
+            --white: #ffffff;
+        }
+        body { font-family: 'Inter', 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; background: var(--light); color: var(--text); }
+        
+        header { background: var(--dark); color: var(--white); padding: 4rem 2rem; }
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .profile-box { text-align: center; flex: 1; min-width: 250px; }
+        .profile-img { width: 220px; height: 220px; border-radius: 50%; border: 4px solid var(--primary); object-fit: cover; }
+        
+        .bio-box { flex: 2; min-width: 300px; }
+        .bio-box h1 { margin: 0; font-size: 2.5rem; letter-spacing: -1px; }
+        .tagline { color: var(--white); font-weight: 500; font-size: 1.3rem; display: block; margin-top: 0.5rem; opacity: 0.9; }
+        .bio-box p { font-size: 1.05rem; opacity: 0.85; line-height: 1.7; margin-top: 1.5rem; }
+
+        .container { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; }
+        section { margin-bottom: 5rem; }
+        
+        .section-title { 
+            font-size: 1.6rem; 
+            margin-bottom: 2.5rem; 
+            color: var(--dark); 
+            border-left: 5px solid var(--primary); 
+            padding-left: 1rem; 
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+        .portfolio-item { 
+            background: #fff; 
+            padding: 1.2rem; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            color: inherit; 
+            border: 1px solid #e2e8f0; 
+            transition: all 0.3s ease; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .portfolio-item:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.15); }
+        .portfolio-item b { color: var(--primary); display: block; margin-bottom: 0.3rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Doświadczenie i Wyniki */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; }
+        .card { 
+            background: var(--white); 
+            padding: 2rem; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            border: 1px solid transparent; 
+            transition: all 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.15); }
+        
+        .tags-inline { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
+        .tag-small { background: #eff6ff; color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; }
+        .stat-card { 
+            background: var(--white); 
+            padding: 1.5rem; 
+            border-radius: 12px; 
+            text-align: center; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .stat-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.15); }
+        .stat-card h3 { color: var(--primary); font-size: 1.6rem; margin: 0 0 0.5rem 0; }
+
+        /* Narzędzia */
+        .skills-container { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: flex-start; }
+        .tag-pill { background: #eff6ff; color: var(--primary); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+
+        footer { background: var(--dark); color: var(--white); padding: 3rem 2rem; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-links a { color: var(--white); text-decoration: none; font-weight: bold; }
+
+        @media (max-width: 768px) {
+            .header-container, .footer-content { flex-direction: column; text-align: center; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="profile-box">
+            <img src="Linkedin.jpg" alt="Mikołaj Walendowski" class="profile-img">
+        </div>
+        <div class="bio-box">
+            <h1>Mikołaj Walendowski</h1>
+            <span class="tagline">Specjalista ds. Marketingu</span>
+            <p>Skupiam się na wzmacnianiu obecności marek w internecie poprzez kampanie Ads oraz SEO. Moje działania opieram na mierzalnych wynikach. Zajmuję się budowaniem zasięgów w mediach społecznościowych oraz optymalizacją treści pod wyszukiwarki. Skutecznie generuję leady wykorzystując zarówno kampanie płatne, jak i content marketing.</p>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2 class="section-title">Wybrane realizacje (Portfolio)</h2>
+        <div class="portfolio-grid">
+            <a href="https://k2.com.pl/blog/uszkodzona-maglownica-objawy/" target="_blank" class="portfolio-item"><b>SEO / K2 Blog</b> Uszkodzona maglownica – objawy i diagnostyka</a>
+            <a href="https://pomorska.pl/ciag-dalszy-bezplatnych-badan-na-osteoporoze-w-powiecie-wloclawskim-i-radziejowskim-kto-moze-skorzystac/ar/c14p2-26806575" target="_blank" class="portfolio-item"><b>Prasa / Gazeta Pomorska</b> Bezpłatne badania na osteoporozę</a>
+            <a href="https://www.facebook.com/CogitoMed/posts/pfbid02cGT245ejAotGbBjuMZ4d6BaK1bGGATCh2MWaXL6iA6Ppj6y57xLqKsKneaeSbkv5l" target="_blank" class="portfolio-item"><b>Social Media / FB</b> Szkielet Andrzej z Pol'and'Rock Festival</a>
+            <a href="https://erla.com/blog/czym-umyc-okna-zeby-blyszczaly/" target="_blank" class="portfolio-item"><b>SEO / Erla Blog</b> Czym umyć okna, żeby błyszczały?</a>
+            <a href="https://www.asta24.pl/2024/08/02/darmowe-badania-osteoporozy-w-pile" target="_blank" class="portfolio-item"><b>Prasa / Asta24</b> Darmowe badania osteoporozy w Pile</a>
+            <a href="https://www.facebook.com/CogitoMed/posts/pfbid02bVLyX9Jhv1cbeeztt2ueQmWL6k6zRW3aNPAxuE5dm9QVhJYgkqw8zcKK8PwPASXEl" target="_blank" class="portfolio-item"><b>Social Media / FB</b> Osteo-Festyn zorganizowany w Strzelinie</a>
+            <a href="https://edu.cogitogrupa.pl/osteoporoza-co-to-przyczyny-objawy-i-leczenie/" target="_blank" class="portfolio-item"><b>SEO / Cogito Edu</b> Osteoporoza – przyczyny i skuteczne leczenie</a>
+            <a href="https://radiobiper.info/2024/08/08/mieszkancy-gminy-lesna-podlaska-sprawdzili-stan-swoich-kosci-film/" target="_blank" class="portfolio-item"><b>Prasa / RadioBiper</b> Relacja z badań dla gminy Leśna Podlaska</a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Doświadczenie i Projekty</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Cogito Med</h3>
+                <p>Koordynowałem kampanie Lead Generation oraz PR-u medycznego. Skutecznie budowałem zaufanie do marki poprzez publikacje w lokalnych mediach.</p>
+                <div class="tags-inline">
+                    <span class="tag-small">META ADS</span>
+                    <span class="tag-small">PR</span>
+                    <span class="tag-small">LEAD GEN</span>
+                    <span class="tag-small">COPYWRITING</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Melle (K2 / Erla)</h3>
+                <p>Zarządzałem treściami SEO na blogach marek K2 i Erla. Tworzyłem i optymalizowałem artykuły eksperckie, które realnie zwiększyły ruch organiczny.</p>
+                <div class="tags-inline">
+                    <span class="tag-small">SEO CONTENT</span>
+                    <span class="tag-small">NEWSLETTER</span>
+                    <span class="tag-small">WORDPRESS</span>
+                    <span class="tag-small">PRESTASHOP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Kluczowe Wyniki</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>5 500+</h3>
+                <p>Pozyskanych kontaktów (leady B2C) przez Facebook Ads</p>
+            </div>
+            <div class="stat-card">
+                <h3>+25%</h3>
+                <p>Wzrost społeczności fanpage'a</p>
+            </div>
+            <div class="stat-card">
+                <h3>Topowe Pozycje</h3>
+                <p style="font-size: 0.9rem;">Artykuły SEO w Google na frazy eksperckie</p>
+            </div>
+            <div class="stat-card">
+                <h3>+10%</h3>
+                <p>Wzrost ruchu e-commerce dzięki strategii contentowej</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Narzędzia i Kompetencje</h2>
+        <div class="skills-container">
+            <div class="tag-pill">Meta Business Suite</div>
+            <div class="tag-pill">Ads Manager</div>
+            <div class="tag-pill">Senuto / SEMSTORM</div>
+            <div class="tag-pill">Canva</div>
+            <div class="tag-pill">WordPress / PrestaShop</div>
+            <div class="tag-pill">Elastic Email</div>
+            <div class="tag-pill">Angielski (C1)</div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <h3>Chcesz porozmawiać o marketingu Twojej firmy?</h3>
+        <div class="footer-links">
+            E-mail: <a href="mailto:m.walendowski@outlook.com">m.walendowski@outlook.com</a> | 
+            Tel: <strong>786 243 700</strong>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
